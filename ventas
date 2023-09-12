@@ -1,0 +1,61 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+//Variables//
+char apell [10];
+float ventas [10];
+float imp = 0;
+float tot = 0;
+int i = 0;
+int rta;
+float mont_max = 0;
+float ven_max = 0;
+int v;
+
+//Hacer//
+int main (){
+    system ("cls");
+
+    //Carga de los vendedores//
+    for (i = 0; i < 10; i++)
+    {
+        printf ("Ingrese el apellido del vendedor: \n");
+        scanf ("%s", &apell[i]);
+    }
+    //ventas//
+    printf("Desea realizar una venta? 1)S\n 2)N\n");
+    scanf("%d", &rta);
+
+    while (rta == 1)
+    {
+        printf("Ingrese el vendedor del 1 al 10: ");
+        scanf("%d", &v);
+        printf("Ingrese el monto de la venta: ");
+        scanf("%.2f", &imp);
+        ventas[v]+= imp;
+    }
+    
+    if (rta == 2)
+    {
+        printf("Goodbye!");
+        exit (0);
+    }
+        else
+    {
+      main ();
+    }
+
+    for ( i = 0; i < 10; i++)
+    {
+        if (ventas[i] > mont_max )
+        {
+            mont_max = ventas[i];
+            ven_max = i;
+        }
+        tot += ventas[i];
+    }
+    printf("El vendedor que mas vendió: %d", "cuyo nombre es %s", ven_max, apell[i]);
+    printf("\nla venta total es: %.2f", tot);
+
+}
