@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int num, c10, c20, c30, c40, c1, cdif = 0;
+
+int main () {
+    while (c1 != 3)
+    {
+        printf ("Ingrese el numero deseado: ");
+        scanf ("%d", &num);
+        switch (num)
+        {
+        case 10:
+           c10 += 1;
+            break;
+        case 20:
+           c20 += 1;
+           break;
+        case 30:
+           c30 += 1;
+           break;
+        case 40:
+           c40 += 1;
+           break;
+        case -1:
+           c1 += 1;
+           break;
+
+        default:
+            cdif += 1;
+            break;
+        }
+    }
+    printf("La cantidad de veces que ingreso el 10 fue de: %d\n", c10);
+    printf("La cantidad de veces que ingreso el 20 fue de: %d\n", c20);
+    printf("La cantidad de veces que ingreso el 30 fue de: %d\n", c30);
+    printf("La cantidad de veces que ingreso el 40 fue de: %d\n", c40);
+    printf("La cantidad de veces que ingreso un numero distinto fue de: %d\n", cdif);
+
+    return 0;
+}
